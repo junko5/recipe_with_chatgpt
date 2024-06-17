@@ -39,7 +39,7 @@ class ChatController extends Controller
         return view('chat.create');
     }
 
-    public function generateResponse($inputText)
+    private function generateResponse($inputText)
     {
         $result = OpenAI::completions()->create([
             'model' => 'gpt-3.5-turbo-instruct',
@@ -50,7 +50,7 @@ class ChatController extends Controller
         return $result['choices'][0]['text'];
     }
 
-    public function generateImage($responseText)
+    private function generateImage($responseText)
     {
         $response =  OpenAI::images()->create([
             'prompt' => $responseText,
