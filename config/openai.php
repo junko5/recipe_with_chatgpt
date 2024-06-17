@@ -25,7 +25,4 @@ return [
     */
 
     'request_timeout' => env('OPENAI_REQUEST_TIMEOUT', 30),
-
-    // Added OpenAI API Key
-    'api_key' => env('OPENAI_API_KEY')
 ];
